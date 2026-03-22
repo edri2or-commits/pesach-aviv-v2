@@ -181,7 +181,34 @@
     .card-img { width:100%; height:220px; overflow:hidden; position:relative; }
     .card-img img { width:100%; height:100%; object-fit:cover; object-position:center 35%; }
     .card-img::after { content:''; position:absolute; inset:0; background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,.08) 100%); }
-    .butterfly-bg { height:220px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg,#ffe8f8,#f0e6ff,#e8f4ff); position:relative; }
+    .butterfly-bg {
+      height:220px; display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(180deg, #c8e8ff 0%, #e2d0ff 38%, #ffd8f0 70%, #fff0d8 100%);
+      position:relative; overflow:hidden;
+    }
+    .bf-1 { position:absolute; font-size:2.2rem; top:28%; left:12%; animation: bfFloat1 3s ease-in-out infinite; }
+    .bf-2 { position:absolute; font-size:1.4rem; top:18%; left:62%; animation: bfFloat2 4s ease-in-out infinite; }
+    .bf-3 { position:absolute; font-size:1.8rem; top:48%; left:76%; animation: bfFloat1 5s ease-in-out infinite reverse; }
+    .bf-4 { position:absolute; font-size:1.2rem; top:14%; left:38%; animation: bfFloat2 3.5s ease-in-out infinite; animation-delay:.8s; }
+    .bf-main { font-size:5.5rem; animation: bfMain 2.2s ease-in-out infinite; z-index:2; position:relative; }
+    .bf-flowers { position:absolute; bottom:0; left:0; right:0; text-align:center; font-size:1.8rem; letter-spacing:-3px; line-height:1; }
+    .bf-spark { position:absolute; font-size:1.1rem; animation: bfSparkle 2.5s ease-in-out infinite; }
+    @keyframes bfFloat1 {
+      0%,100% { transform: translateY(0) rotate(-5deg); }
+      50%      { transform: translateY(-14px) rotate(6deg); }
+    }
+    @keyframes bfFloat2 {
+      0%,100% { transform: translateY(0) rotate(4deg); }
+      50%      { transform: translateY(-9px) rotate(-4deg); }
+    }
+    @keyframes bfMain {
+      0%,100% { transform: scale(1) translateY(0); }
+      50%      { transform: scale(1.09) translateY(-7px); }
+    }
+    @keyframes bfSparkle {
+      0%,100% { opacity:0; transform: scale(0.4); }
+      50%      { opacity:1; transform: scale(1.3); }
+    }
 
     .card-body { padding:14px 18px 18px; text-align:center; }
     .card-title { font-size:1.5rem; font-weight:900; line-height:1.2; margin-bottom:5px; color:#3a2800; }
@@ -246,7 +273,15 @@
 
     <a class="card" href="https://seoi.net/butterfly/" target="_blank" rel="noopener">
       <div class="butterfly-bg">
-        <span style="font-size:5rem">🦋</span>
+        <span class="bf-1">🦋</span>
+        <span class="bf-2">🦋</span>
+        <span class="bf-3">🦋</span>
+        <span class="bf-4">🦋</span>
+        <span class="bf-spark" style="top:18%;left:52%;animation-delay:0.5s;">✨</span>
+        <span class="bf-spark" style="top:38%;left:24%;animation-delay:1.2s;">✨</span>
+        <span class="bf-spark" style="top:22%;left:82%;animation-delay:0.9s;">⭐</span>
+        <span class="bf-main">🦋</span>
+        <div class="bf-flowers">🌸🌼🌷🌺🌸🌼🌷🌺🌸🌼🌷🌺</div>
       </div>
       <div class="card-body">
         <div class="card-title">🦋 ציירו פרפר</div>
